@@ -40,7 +40,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Initialize fear of heights
-fearofheights = 1;
+fear_of_heights = 1;
 </string>
           </argument>
         </arguments>
