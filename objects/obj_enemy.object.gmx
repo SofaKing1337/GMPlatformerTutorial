@@ -33,6 +33,9 @@ movespeed = 3;
 grav = 0.2
 hsp = 0;
 vsp = 0;
+
+// 0 for off, 1 for on
+fearofheights = 0;
 </string>
           </argument>
         </arguments>
@@ -80,6 +83,11 @@ if (place_meeting(x,y+vsp,obj_wall)){
         y += sign(vsp);
     }
     vsp = 0;
+    
+    // check at the edge of the character and 8 pixels below for floor detection
+    if(fearofheights &amp;&amp; !position_meeting(x+(sprite_width/2)*dir, y+(sprite_height/2)+8, obj_wall)){
+      dir *= -1;
+    }
 }
 y += vsp;
 
