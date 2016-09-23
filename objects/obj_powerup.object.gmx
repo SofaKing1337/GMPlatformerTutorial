@@ -29,7 +29,7 @@
 
 // execute this code on the player object that collided with us
 with(obj_player){
-  jumpspeed = jumpspeed_powerup;
+  jump_speed = jump_speed_powerup;
   
   // set the sprite to be the "powered up" version
   sprite_index = spr_player_b;
