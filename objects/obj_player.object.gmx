@@ -106,9 +106,22 @@ if (place_meeting(x, y + 1, obj_wall)){
   current_num_jumps = max_num_jumps;
 }
 
-// handle jumping off the ground and air jumping within the
-// allocated number of jumps
-if (key_jump &amp;&amp; current_num_jumps &gt; 0){
+/*
+  Give the player an uncounted jump if they're touching a wall
+  from the left or right.
+  
+  Of note here, since the player has absolute (i.e. frame perfect)
+  control of their horizontal movement, pushing them away from the
+  wall has very little effect right now (there's no momentum, they
+  can simply snap back). Thus they can climb the wall with these
+  jumps and easily abuse the mechanic.
+  
+  The else is necessary to make sure the player still gets their
+  subsequent air jumps if they were touching a wall.
+*/
+if (key_jump &amp;&amp; (place_meeting(x + 1, y, obj_wall) || place_meeting(x - 1, y, obj_wall))){
+  vsp = key_jump * -jump_speed;
+} else if (key_jump &amp;&amp; current_num_jumps &gt; 0){
   vsp = key_jump * -jump_speed;
   current_num_jumps -= 1;
 }
@@ -126,6 +139,8 @@ if (key_jump &amp;&amp; current_num_jumps &gt; 0){
 
   If you have springs, make sure and tweak this line to
   not allow the player to stop themselves after springing.
+  Along with springs this nullifies hopping off enemies as
+  well, look in to fixing this later.
 */
 if ((vsp &lt; 0) &amp;&amp; (!key_jump_held)){
   vsp = max(vsp, 0);
