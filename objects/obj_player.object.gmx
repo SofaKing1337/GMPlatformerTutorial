@@ -106,6 +106,7 @@ if (place_meeting(x, y + 1, obj_wall)){
   current_num_jumps = max_num_jumps;
 }
 
+// handle jumping off the ground and air jumping within the
 // allocated number of jumps
 if (key_jump &amp;&amp; current_num_jumps &gt; 0){
   vsp = key_jump * -jump_speed;
