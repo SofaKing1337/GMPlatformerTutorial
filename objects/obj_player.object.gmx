@@ -32,6 +32,8 @@ vsp = 0;
 move_speed = 4;
 jump_speed_normal = 7;
 jump_speed_powerup = 10;
+max_num_jumps = 2;
+current_num_jumps = max_num_jumps;
 
 // initialize jump_speed as normal speed
 jump_speed = jump_speed_normal;
@@ -99,9 +101,15 @@ if (vsp &lt; 10){
   vsp += grav;
 }
 
-// if the player is on the ground, allow them to jump
-if (place_meeting(x, y+1, obj_wall)){
-    vsp = key_jump * -jump_speed;
+// if the player is on the ground, reset number of jumps available
+if (place_meeting(x, y + 1, obj_wall)){
+  current_num_jumps = max_num_jumps;
+}
+
+// allocated number of jumps
+if (key_jump &amp;&amp; current_num_jumps &gt; 0){
+  vsp = key_jump * -jump_speed;
+  current_num_jumps -= 1;
 }
 
 /*
