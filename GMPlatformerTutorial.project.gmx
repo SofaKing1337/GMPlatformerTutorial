@@ -7,11 +7,15 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_player_old</sprite>
     <sprite>sprites\spr_player_b</sprite>
     <sprite>sprites\spr_powerup</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_enemy_nofall</sprite>
+    <sprite>sprites\spr_player_fall</sprite>
+    <sprite>sprites\spr_player_idle</sprite>
+    <sprite>sprites\spr_player_jump</sprite>
+    <sprite>sprites\spr_player_run</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
