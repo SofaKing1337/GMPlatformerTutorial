@@ -17,6 +17,7 @@
     <sprite>sprites\spr_player_jump</sprite>
     <sprite>sprites\spr_player_run</sprite>
     <sprite>sprites\spr_platform</sprite>
+    <sprite>sprites\spr_platform_move</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -27,6 +28,7 @@
     <object>objects\obj_enemy</object>
     <object>objects\obj_enemy_nofall</object>
     <object>objects\obj_platform</object>
+    <object>objects\obj_platform_move</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

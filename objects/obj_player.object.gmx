@@ -28,6 +28,7 @@
             <string>/// Initialize Variables
 grav = 0.2;
 hsp = 0;
+hsp_carry = 0;
 vsp = 0;
 move_speed = 4;
 jump_speed_normal = 7;
@@ -175,14 +176,17 @@ if ((vsp &lt; 0) &amp;&amp; (!key_jump_held)){
   vsp = max(vsp, 0);
 }
 
+var hsp_final = hsp + hsp_carry;
+hsp_carry = 0;
+
 // Horizontal Collision with pixel precision
-if (place_meeting(x + hsp, y, obj_wall)){
-    while (!place_meeting(x + sign(hsp), y, obj_wall)){
-        x += sign(hsp);
+if (place_meeting(x + hsp_final, y, obj_wall)){
+    while (!place_meeting(x + sign(hsp_final), y, obj_wall)){
+        x += sign(hsp_final);
     }
-    hsp = 0;
+    hsp_final = 0;
 }
-x += hsp;
+x += hsp_final;
 
 // Vertical Collision with pixel precision
 if (place_meeting(x, y + vsp, obj_wall)){
