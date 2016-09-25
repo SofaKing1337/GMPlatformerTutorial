@@ -18,9 +18,13 @@
     <sprite>sprites\spr_player_run</sprite>
     <sprite>sprites\spr_platform</sprite>
     <sprite>sprites\spr_platform_move</sprite>
+    <sprite>sprites\spr_checkpoint</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_death.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_wall</object>
@@ -29,8 +33,10 @@
     <object>objects\obj_enemy_nofall</object>
     <object>objects\obj_platform</object>
     <object>objects\obj_platform_move</object>
+    <object>objects\obj_checkpoint</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_init</room>
     <room>rooms\room0</room>
   </rooms>
   <help>

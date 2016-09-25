@@ -39,6 +39,11 @@ key_down = 0;
 
 // initialize jump_speed as normal speed
 jump_speed = jump_speed_normal;
+
+if (global.checkpoint_room == room){
+  x = global.checkpoint_x;
+  y = global.checkpoint_y;
+}
 </string>
           </argument>
         </arguments>
