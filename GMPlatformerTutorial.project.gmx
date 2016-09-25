@@ -16,6 +16,7 @@
     <sprite>sprites\spr_player_idle</sprite>
     <sprite>sprites\spr_player_jump</sprite>
     <sprite>sprites\spr_player_run</sprite>
+    <sprite>sprites\spr_platform</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -25,6 +26,7 @@
     <object>objects\obj_powerup</object>
     <object>objects\obj_enemy</object>
     <object>objects\obj_enemy_nofall</object>
+    <object>objects\obj_platform</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

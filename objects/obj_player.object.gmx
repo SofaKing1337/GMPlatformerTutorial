@@ -34,6 +34,7 @@ jump_speed_normal = 7;
 jump_speed_powerup = 10;
 max_num_jumps = 2;
 current_num_jumps = max_num_jumps;
+key_down = 0;
 
 // initialize jump_speed as normal speed
 jump_speed = jump_speed_normal;
@@ -92,6 +93,7 @@ sprite_index = spr_player_old;
 // get and process the player's input
 key_right = keyboard_check(vk_right);
 key_left = -keyboard_check(vk_left);
+key_down = keyboard_check(vk_down);
 key_jump = keyboard_check_pressed(vk_space);
 key_jump_held = keyboard_check(vk_space);
 move = key_left + key_right;
@@ -147,9 +149,9 @@ if (place_meeting(x, y + 1, obj_wall)){
   either.
 */
 if (key_jump &amp;&amp; (place_meeting(x + 1, y, obj_wall) || place_meeting(x - 1, y, obj_wall))){
-  vsp = key_jump * -jump_speed;
+  vsp = -jump_speed;
 } else if (key_jump &amp;&amp; current_num_jumps &gt; 0){
-  vsp = key_jump * -jump_speed;
+  vsp = -jump_speed;
   current_num_jumps -= 1;
 }
 
